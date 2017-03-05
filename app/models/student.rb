@@ -18,6 +18,8 @@ class Student < ActiveRecord::Base
     Student.select do |student|
       if student.name.match(str.capitalize)
         student.name.match(str.capitalize).string
+      else
+        self.all
       end
     end
   end
