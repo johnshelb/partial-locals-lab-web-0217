@@ -13,4 +13,12 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(str)
+    Student.select do |student|
+      if student.name.match(str.capitalize)
+        student.name.match(str.capitalize).string
+      end
+    end
+  end
 end

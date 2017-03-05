@@ -1,0 +1,7 @@
+<%@classrooms.each do |room|%>
+<%=room.id%>
+<%=room.course_name%>
+<%room.classroom_students.each do |st|%>
+<%=st.student.name%>
+<%end%>
+<%end%>
